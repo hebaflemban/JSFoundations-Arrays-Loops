@@ -9,7 +9,14 @@
  * getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [11, 35, 601, 777, 999]
  */
 function getOdds(numbers) {
-  // Your code here
+  let i =0 
+  let odds = []
+  for (i=0 ; i<numbers.length ; i++){
+    if (numbers[i]%2 != 0){
+      odds.push(numbers[i])
+    }
+  }
+  return odds
 }
 
 /**
@@ -23,7 +30,15 @@ function getOdds(numbers) {
  * getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [52, 14, 56, 888]
  */
 function getEvens(numbers) {
-  // Your code here
+  let i = 0
+  let evens = []
+
+  for (i ; i<numbers.length ; i++){
+    if (numbers[i]%2==0){
+      evens.push(numbers[i])
+    }
+  }
+  return evens
 }
 
 /**
@@ -36,7 +51,14 @@ function getEvens(numbers) {
  * getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]) -> 3
  */
 function getDuplicateCount(x, numbers) {
-  // Your code here
+  let i = 0 
+  let count = 0 
+  for (i; i<numbers.length ; i++){
+    if (numbers[i] == x){
+      count ++
+    }
+  }
+  return count
 }
 
 /**
@@ -54,7 +76,31 @@ function getDuplicateCount(x, numbers) {
  * - Use string method .endsWith()
  */
 function youGottaCalmDown(s) {
-  // Your code here
+  let i = 0 
+  for (i; i<s.length ; i++){
+    if (s[i] == '!'){ break; }{
+    }
+  }
+  return s.slice(0,i+1)
+
 }
 
 module.exports = { getOdds, getEvens, getDuplicateCount, youGottaCalmDown };
+
+
+console.log("getOdds")
+console.log(getOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+console.log(getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) )
+
+console.log("getEvens")
+console.log(getEvens([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+console.log(getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) )
+
+console.log("getDuplicateCount")
+console.log(getDuplicateCount(1, [1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 11, 1, 12, 13]) )
+console.log(getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]))
+ 
+console.log("youGottaCalmDown")
+console.log(youGottaCalmDown("HI!!!!!!!!!!"))
+console.log(youGottaCalmDown("Taylor Schwifting!!!!!!!!!!!"))
+console.log(youGottaCalmDown("Hellooooo"))
